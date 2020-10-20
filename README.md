@@ -22,11 +22,13 @@ ln -s /opt/oracle/instantclient_11_2/libocci.so.11.1 /lib64/libocci.so.11.1
 # Instalar ODBC Driver
 
 Debian
+```sh
 apt install unixodbc odbcinst1debian2 libodbc1
-
+```
 Centos
+```sh
 dnf install libiodbc.x86_64 unixODBC.x86_64 libiodbc-devel.x86_64 unixODBC-devel.x86_64
-
+```
 
 # Validar se todas as libs estao presente
 ldd /opt/oracle/instantclient_11_2/libsqora.so.12.1
