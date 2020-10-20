@@ -104,11 +104,11 @@ Driver Logging=7
 | Parametro            | Instrucoes |
 |--------------------- | ---------------------------------------------------------|
 | [Base DN] |
-| Driver = oracle      | -- Configurado previamente no odbcinst [oracle] |
-| DSN = Base DN	       | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
-| ServerName = 	       | -- Nome do Servidor configurado no TNSNAMES |
-| UserID = 	       | -- ID usuário do monitoramento |
-| Password =           | -- Senha do usuário do monitoramento |
+| Driver = oracle      | Configurado previamente no odbcinst [oracle] |
+| DSN = Base DN	       | "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
+| ServerName = 	       | Nome do Servidor configurado no TNSNAMES |
+| UserID = 	       | ID usuário do monitoramento |
+| Password =           | Senha do usuário do monitoramento |
 
 
 # Feito isso exportar as variaveis de ambiente para teste
@@ -171,7 +171,7 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 | {$ORACLE.PASSWORD} | Senha |
 | {$ORACLE.PORT}     | 1521 (Porta padrao 1521 ou 1523, customizar de acordo com ambiente) |
 | {$ORACLE.USER}     | Usuario banco |
-
+| Amor               | Te amo |
 
 
 
