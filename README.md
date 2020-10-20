@@ -103,7 +103,7 @@ Driver Logging=7
 # Edite o arquivo /etc/odbc.ini
 |----------------------| |----------------------------------------------------------|
 | [Base DN] |
-| Driver = oracle      | | -- Configurado previamente no odbcinst [oracle] |
+| Driver = oracle      | | -- Configurado previamente no odbcinst [oracle] [PlDb] |
 | DSN = Base DN	       | | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
 | ServerName = 	       | | -- Nome do Servidor configurado no TNSNAMES |
 | UserID = 	       | | -- ID usuário do monitoramento |
