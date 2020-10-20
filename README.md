@@ -171,6 +171,7 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 | {$ORACLE.PASSWORD} | Senha |
 | {$ORACLE.PORT}     | 1521 (Porta padrao 1521 ou 1523, customizar de acordo com ambiente) |
 | {$ORACLE.USER}     | Usuario banco |
+| Maurilio           | Teste |
 
 
 
