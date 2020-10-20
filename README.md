@@ -109,14 +109,17 @@ Driver Logging=7
 | ServerName = 	       | -- Nome do Servidor configurado no TNSNAMES |
 | UserID = 	       | -- ID usuário do monitoramento |
 | Password =           | -- Senha do usuário do monitoramento |
-|--------------------- | ----------------------------------------------------------|
+
 
 # Feito isso exportar as variaveis de ambiente para teste
+```sh
 export LD_LIBRARY_PATH="/opt/oracle/instantclient_12_2/"
 export ORACLE_HOME="/opt/oracle/instantclient_12_2/"
 export TNS_ADMIN="/opt/oracle"
+```
 
 # Testar conexao com isql
+```sh
 isql -v "INSTANCE ORACLE"
 
 # O resultado deve ser conforme abaixo
@@ -128,17 +131,19 @@ isql -v "INSTANCE ORACLE"
 | quit                                  |
 |                                       |
 +---------------------------------------+
-
+```
 
 # Verificar onde o zabbix carrega as variaveis de ambiente
+```sh
 cat /usr/lib/systemd/system/zabbix-server.service (Em caso de Zabbix-Server)
 cat /usr/lib/systemd/system/zabbix-proxy.service  (Em caso de proxy)
- 
-# Criar o arquivo conforme caminho encontrando na variavel
-EnvironmentFile=-/etc/sysconfig/zabbix-server
+``` 
+# Criar o arquivo conforme caminho encontrando na variavel EnvironmentFile
+```sh
 vi /etc/sysconfig/zabbix-server (Caso o path seja esse e caso seja zabbix server, adaptar de acordo com o ambiente)
-
+```
 # Adicionar as seguintes informacoes no arquivo:
+```sh
 LD_LIBRARY_PATH="/opt/oracle/instantclient_12_2/"
 ORACLE_HOME="/opt/oracle/instantclient_12_2/"
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/
@@ -148,20 +153,22 @@ export ORACLE_HOME
 export LD_LIBRARY_PATH
 export TNS_ADMIN
 export PATH
+```
 
 # Reiniciar o zabbix e verificar se carregou as variaveis de ambiente
+```sh
 systemctl restart zabbix-server
 ps -aux |grep zabbix
 cat /proc/PID_ZABBIX/environ
 
 # O resultado tem que ser semelhante ao abaixo:
 LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/INVOCATION_ID=d6c9931de97a4df6af7bb6db7f7d342aJOURNAL_STREAM=8:11598215CONFFILE=/etc/zabbix/zabbix_proxy.confLD_LIBRARY_PATH=/opt/oracle/instantclient_12_2/ORACLE_HOME=/opt/oracle/instantclient_12_2/TNS_ADMIN=/opt/oracle
-
+```
 # Feito isso va ate a interface web, adicione o Template Oracle by ODBC e cadastre as seguintes macros:
-{$ORACLE.DSN} = Instance ORACLE
-{$ORACLE.PASSWORD} = Senha
-{$ORACLE.PORT} = 1521 (Porta padrao 1521 ou 1523, customizar de acordo com ambiente)
-{$ORACLE.USER} = Usuario banco
+| {$ORACLE.DSN}      | Instance ORACLE |
+| {$ORACLE.PASSWORD} | Senha |
+| {$ORACLE.PORT}     | 1521 (Porta padrao 1521 ou 1523, customizar de acordo com ambiente) |
+| {$ORACLE.USER}     | Usuario banco |
 
 
 
