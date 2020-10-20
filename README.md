@@ -11,11 +11,13 @@ mkdir /opt/oracle/
 
 # Copiar o client baixado pra pasta criada e descompactar
 
+```sh
 unzip instantclient-odbc instantclient
 ln -s /opt/oracle/instantclient_12_2/libsqora.so.12.1 /lib/libsqora.so.12.1
 ln -s /opt/oracle/instantclient_12_2/libsqora.so.12.1 /lib64/libsqora.so.12.1
 ln -s /opt/oracle/instantclient_11_2/libocci.so.11.1 /lib/libocci.so.11.1
 ln -s /opt/oracle/instantclient_11_2/libocci.so.11.1 /lib64/libocci.so.11.1
+```
 
 # Instalar ODBC Driver
 
