@@ -7,10 +7,10 @@ Tutorial desenvolvido para auxiliar na conexao do Oracle com Zabbix via ODBC.
 https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
 
 # Criar a pasta e descompactar o client
+```sh
 mkdir /opt/oracle/
-
+```
 # Copiar o client baixado pra pasta criada e descompactar
-
 ```sh
 unzip instantclient-odbc instantclient
 ln -s /opt/oracle/instantclient_12_2/libsqora.so.12.1 /lib/libsqora.so.12.1
@@ -31,8 +31,8 @@ dnf install libiodbc.x86_64 unixODBC.x86_64 libiodbc-devel.x86_64 unixODBC-devel
 ```
 
 # Validar se todas as libs estao presente
+```sh
 ldd /opt/oracle/instantclient_11_2/libsqora.so.12.1
-
 
 # A saida deve ser parecida com o resultado abaixo
 linux-vdso.so.1 (0x00007fff15589000)
@@ -54,10 +54,10 @@ linux-vdso.so.1 (0x00007fff15589000)
         libnnz12.so => /usr/lib/oracle/12.2/client64/lib/libnnz12.so (0x00007f9aa4016000)
         libons.so => /usr/lib/oracle/12.2/client64/lib/libons.so (0x00007f9aa3dc8000)
         libltdl.so.7 => /usr/lib/x86_64-linux-gnu/libltdl.so.7 (0x00007f9aa3bbe000)
-        
+ ```       
 
 # Caso falte alguma lib da um locate na mesma e cria o link simbolico pra pasta lib(Em caso de 32bits) ou lib64(Em caso de 64bits)
-
+```sh
 Exemplo:
         libodbcinst.so.2 => not found
         libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9aa5020000)
@@ -76,7 +76,7 @@ locate libodbcinst
 
 # Crie o link conforme abaixo
 ln -s /usr/lib64/libodbcinst.so.2 /usr/lib64/libodbcinst.so.1
-
+```
 
 # Crie e edite o arquivo tnsnames.ora conforme abaixo.
 
