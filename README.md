@@ -165,6 +165,8 @@ cat /proc/PID_ZABBIX/environ
 LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/INVOCATION_ID=d6c9931de97a4df6af7bb6db7f7d342aJOURNAL_STREAM=8:11598215CONFFILE=/etc/zabbix/zabbix_proxy.confLD_LIBRARY_PATH=/opt/oracle/instantclient_12_2/ORACLE_HOME=/opt/oracle/instantclient_12_2/TNS_ADMIN=/opt/oracle
 ```
 # Feito isso va ate a interface web, adicione o Template Oracle by ODBC e cadastre as seguintes macros:
+| MACRO              | Valor |
+|------------------- | ----- |
 | {$ORACLE.DSN}      | Instance ORACLE |
 | {$ORACLE.PASSWORD} | Senha |
 | {$ORACLE.PORT}     | 1521 (Porta padrao 1521 ou 1523, customizar de acordo com ambiente) |
