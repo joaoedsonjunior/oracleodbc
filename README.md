@@ -101,14 +101,15 @@ FileUsage=1
 Driver Logging=7
 ```
 # Edite o arquivo /etc/odbc.ini
-|----------------------| |----------------------------------------------------------|
+| Parametro            | Instrucoes |
+|--------------------- | ---------------------------------------------------------|
 | [Base DN] |
-| Driver = oracle      | | -- Configurado previamente no odbcinst [oracle] [PlDb] |
-| DSN = Base DN	       | | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
-| ServerName = 	       | | -- Nome do Servidor configurado no TNSNAMES |
-| UserID = 	       | | -- ID usuário do monitoramento |
-| Password =           | | -- Senha do usuário do monitoramento |
-|----------------------| |----------------------------------------------------------|
+| Driver = oracle      | -- Configurado previamente no odbcinst [oracle] [PlDb] |
+| DSN = Base DN	       | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
+| ServerName = 	       | -- Nome do Servidor configurado no TNSNAMES |
+| UserID = 	       | -- ID usuário do monitoramento |
+| Password =           | -- Senha do usuário do monitoramento |
+|--------------------- | ----------------------------------------------------------|
 
 # Feito isso exportar as variaveis de ambiente para teste
 export LD_LIBRARY_PATH="/opt/oracle/instantclient_12_2/"
