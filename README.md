@@ -79,7 +79,7 @@ ln -s /usr/lib64/libodbcinst.so.2 /usr/lib64/libodbcinst.so.1
 ```
 
 # Crie e edite o arquivo tnsnames.ora conforme abaixo.
-
+```sh
 vi /opt/oracle/tnsnames.ora
 
 SERVIDOR =
@@ -90,22 +90,25 @@ SERVIDOR =
       (SERVICE_NAME = "INSTANCE ORACLE")
     )
   )
-
+```
 
 # Edite o arquivo /etc/odbcinst.ini conforme abaixo
+```sh
 [oracle]
 Description=ODBC for Oracle
 Driver=/opt/oracle/instantclient_12_2/libsqora.so.12.1
 FileUsage=1
 Driver Logging=7
-
+```
 # Edite o arquivo /etc/odbc.ini
-[Base DN]
-Driver = oracle   	 	-- Configurado previamente no odbcinst [oracle]
-DSN = Base DN					-- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames
-ServerName = 					-- Nome do Servidor configurado no TNSNAMES
-UserID = 						  -- ID usuário do monitoramento
-Password = 						-- Senha do usuário do monitoramento
+|----------------------| |----------------------------------------------------------|
+| [Base DN] |
+| Driver = oracle      | | -- Configurado previamente no odbcinst [oracle] |
+| DSN = Base DN	       | | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
+| ServerName = 	       | | -- Nome do Servidor configurado no TNSNAMES |
+| UserID = 	       | | -- ID usuário do monitoramento |
+| Password =           | | -- Senha do usuário do monitoramento |
+|----------------------| |----------------------------------------------------------|
 
 # Feito isso exportar as variaveis de ambiente para teste
 export LD_LIBRARY_PATH="/opt/oracle/instantclient_12_2/"
