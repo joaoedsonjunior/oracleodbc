@@ -104,7 +104,7 @@ Driver Logging=7
 | Parametro            | Instrucoes |
 |--------------------- | ---------------------------------------------------------|
 | [Base DN] |
-| Driver = oracle      | -- Configurado previamente no odbcinst [oracle] [PlDb] |
+| Driver = oracle      | -- Configurado previamente no odbcinst [oracle] |
 | DSN = Base DN	       | -- "INSTANCE ORACLE" conforme SERVICE_NAME do tnsnames |
 | ServerName = 	       | -- Nome do Servidor configurado no TNSNAMES |
 | UserID = 	       | -- ID usuário do monitoramento |
