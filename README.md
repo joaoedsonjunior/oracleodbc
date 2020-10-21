@@ -174,7 +174,8 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 
 
 
-Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologacao do tutorial.
+
+# Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologacao do tutorial.
 
 
 
