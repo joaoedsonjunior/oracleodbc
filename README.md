@@ -27,7 +27,7 @@ apt install unixodbc odbcinst1debian2 libodbc1
 ```
 Centos
 ```sh
-dnf install libiodbc.x86_64 unixODBC.x86_64 libiodbc-devel.x86_64 unixODBC-devel.x86_64
+dnf install libiodbc.x86_64 unixODBC.x86_64 libiodbc-devel.x86_64 unixODBC-devel.x86_64 libnsl.x86_64
 ```
 
 # Validar se todas as libs estao presente
@@ -174,7 +174,7 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 
 
 
-
+Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologacao do tutorial.
 
 
 
