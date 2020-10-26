@@ -175,8 +175,5 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 
 
 
-# Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologação do tutorial e ao Gabriel Gama que auxiliou na formatação 
+# Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologação do tutorial e ao [Gabriel Gama](https://github.com/tr4kthebox) que auxiliou com markdown 
 
-
-
-        
