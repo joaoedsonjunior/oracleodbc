@@ -149,10 +149,6 @@ ORACLE_HOME="/opt/oracle/instantclient_12_2/"
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/
 TNS_ADMIN="/opt/oracle"
 
-export ORACLE_HOME
-export LD_LIBRARY_PATH
-export TNS_ADMIN
-export PATH
 ```
 
 # Reiniciar o zabbix e verificar se carregou as variaveis de ambiente
