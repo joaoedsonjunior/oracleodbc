@@ -18,13 +18,25 @@ sudo apt install alien -y
 ```
 Instale os drivers ODBC
 ```sh
-sudo apt libaio1 libaio-dev libodbc1 odbcinst1debian2 unixodbc unixodbc-dev -y
+sudo apt install libaio1 libaio-dev libodbc1 odbcinst1debian2 unixodbc unixodbc-dev -y
 ```
 Agora instale o Instant Client e o ODBC
 ```sh
 sudo alien -i oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
 sudo alien -i oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
 ```
+
+## Etapas para instalação baseada em RedHat(Testado OEL 7.9 e Centos 7)
+Instale os drivers ODBC
+```sh
+sudo yum install libaio1 libaio-dev libodbc1 unixodbc unixodbc-dev -y
+```
+Agora instale o Instant Client e o ODBC
+```sh
+sudo rpm -ivh oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+sudo rpm -ivh oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
+```
+
 Editar os arquivos odbc.ini e odbcinst.ini
 ```sh
 vi /etc/odbcinst.ini
@@ -75,9 +87,8 @@ linux-vdso.so.1 (0x00007ffedc5e1000)
  ```       
 Feito isso exportar as variaveis de ambiente para teste
 ```sh
-export LD_LIBRARY_PATH="/opt/oracle/instantclient_12_2/"
-export ORACLE_HOME="/opt/oracle/instantclient_12_2/"
-export TNS_ADMIN="/opt/oracle"
+export LD_LIBRARY_PATH="/usr/lib/oracle/12.2/client64/lib/"
+export ORACLE_HOME="/usr/lib/oracle/12.2/client64/bin/"
 ```
 
 Testar conexao com isql
@@ -96,10 +107,17 @@ isql -v "INSTANCE ORACLE"
 ```
 
 Verificar onde o zabbix carrega as variaveis de ambiente
+### Debian/Ubuntu
 ```sh
 cat /lib/systemd/system/zabbix-server.service (Em caso de Zabbix-Server)
 cat /lib/systemd/system/zabbix-proxy.service  (Em caso de proxy)
 ``` 
+### RedHat
+```sh
+cat /usr/lib/systemd/system/zabbix-server.service (Em caso de Zabbix-Server)
+cat /usr/lib/systemd/system/zabbix-proxy.service  (Em caso de proxy)
+``` 
+
 Criar o arquivo conforme caminho encontrando na variavel EnvironmentFile
 ```sh
 vi /etc/default/zabbix-server (Caso o path seja esse e caso seja zabbix server, adaptar de acordo com o ambiente)
@@ -117,7 +135,7 @@ ps -aux |grep zabbix
 cat /proc/PID_ZABBIX/environ
 
 # O resultado tem que ser semelhante ao abaixo:
-LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/INVOCATION_ID=d6c9931de97a4df6af7bb6db7f7d342aJOURNAL_STREAM=8:11598215CONFFILE=/etc/zabbix/zabbix_proxy.confLD_LIBRARY_PATH=/opt/oracle/instantclient_12_2/ORACLE_HOME=/opt/oracle/instantclient_12_2/TNS_ADMIN=/opt/oracle
+LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/INVOCATION_ID=d6c9931de97a4df6af7bb6db7f7d342aJOURNAL_STREAM=8:11598215CONFFILE=/etc/zabbix/zabbix_proxy.confLD_LIBRARY_PATH=/usr/lib/oracle/12.2/client64/libORACLE_HOME=/usr/lib/oracle/12.2/client64/bin
 ```
 
 # Feito isso va ate a interface web, adicione o Template Oracle by ODBC e cadastre as seguintes macros:
