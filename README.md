@@ -3,8 +3,10 @@
 
 Tutorial desenvolvido para auxiliar na conexao do Oracle com Zabbix via ODBC.
 
-<li> Primeiramente fazer download do Oracle Instant Client e Instant Client ODBC </li>
-<https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html>
+## Primeiramente fazer download do Oracle Instant Client e Instant Client ODBC
+Entre no site da **[Oracle](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)**.
+
+
 
 ### oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
 ### oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
