@@ -1,35 +1,31 @@
 # oracleodbc
-# Instructions for ODBC conection on Oracle
+### Instructions for ODBC conection on Oracle
+### Tutorial desenvolvido para auxiliar na conexao do Oracle com Zabbix via ODBC.
 
-Tutorial desenvolvido para auxiliar na conexao do Oracle com Zabbix via ODBC.
 
 ## Primeiramente fazer download do Oracle Instant Client e Instant Client ODBC
 Entre no site da **[Oracle](https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html)**.
-
-
-
-### oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
-### oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
-
+```sh
+oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
+```
 
 ## Etapas para instalação baseada em debian(Testado no ubuntu 18.04)
 
-<li> Instale o alien </li>
+Instale o alien
 ```sh
 sudo apt install alien -y
 ```
-<li> Instale os drivers ODBC </li>
+Instale os drivers ODBC
 ```sh
 sudo apt libaio1 libaio-dev libodbc1 odbcinst1debian2 unixodbc unixodbc-dev -y
 ```
-
-<li> Agora instale o Instant Client e o ODBC </li>
+Agora instale o Instant Client e o ODBC
 ```sh
 sudo alien -i oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
 sudo alien -i oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
 ```
-
-<li> Editar os arquivos odbc.ini e odbcinst.ini </li>
+Editar os arquivos odbc.ini e odbcinst.ini
 ```sh
 vi /etc/odbcinst.ini
 ```
