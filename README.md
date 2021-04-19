@@ -3,19 +3,59 @@
 
 Tutorial desenvolvido para auxiliar na conexao do Oracle com Zabbix via ODBC.
 
-# Fazer download do Oracle Instant Client e Instant Client ODBC
-https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
+<li> Primeiramente fazer download do Oracle Instant Client e Instant Client ODBC </li>
+<https://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html>
 
 ### oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
 ### oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
 
 
+## Etapas para instalação baseada em debian(Testado no ubuntu 18.04)
+
+<li> Instale o alien </li>
+```sh
+sudo apt install alien -y
+```
+<li> Instale os drivers ODBC </li>
+```sh
+sudo apt libaio1 libaio-dev libodbc1 odbcinst1debian2 unixodbc unixodbc-dev -y
+```
+
+<li> Agora instale o Instant Client e o ODBC </li>
+```sh
+sudo alien -i oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+sudo alien -i oracle-instantclient12.2-odbc-12.2.0.1.0-2.x86_64.rpm
+```
+
+<li> Editar os arquivos odbc.ini e odbcinst.ini </li>
+```sh
+vi /etc/odbcinst.ini
+```
+# odbcinst.ini
+```sh
+[Oracle-12]
+Description = Oracle 12
+Driver = /usr/lib/oracle/12.2/client64/lib/libsqora.so.12.1
+#Driver Logging = 7
+FileUsage = 1
+CPTimeout = 300
+```
+
+# odbc.ini
+```sh
+[DSN]
+Driver = Oracle-12
+Server = IP_DO_SERVIDOR
+ServerName = //IP_DO_SERVIDOR/INSTANCE
+UserID = user
+Password = senha
 
 
 
 
 
-sudo apt install alien libaio1
+
+
 ```sh
 mkdir /opt/oracle/
 ```
