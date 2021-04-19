@@ -138,7 +138,7 @@ cat /proc/PID_ZABBIX/environ
 LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/oracle/instantclient_12_2/INVOCATION_ID=d6c9931de97a4df6af7bb6db7f7d342aJOURNAL_STREAM=8:11598215CONFFILE=/etc/zabbix/zabbix_proxy.confLD_LIBRARY_PATH=/usr/lib/oracle/12.2/client64/libORACLE_HOME=/usr/lib/oracle/12.2/client64/bin
 ```
 
-# Feito isso va ate a interface web, adicione o Template Oracle by ODBC e cadastre as seguintes macros:
+### Feito isso va ate a interface web, adicione o Template Oracle by ODBC e cadastre as seguintes macros:
 | MACRO              | Valor |
 |------------------- | ----- |
 | {$ORACLE.DSN}      | Instance ORACLE |
@@ -149,5 +149,5 @@ LANG=pt_BR.UTF-8LANGUAGE=pt_BR:pt:enPATH=/usr/local/sbin:/usr/local/bin:/usr/sbi
 
 
 
-# Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologação do tutorial e ao [Gabriel Gama](https://github.com/tr4kthebox) que auxiliou com markdown 
+## Agradecimentos ao amigo Cabral Junior pelo empenho nos testes e homologação do tutorial e ao [Gabriel Gama](https://github.com/tr4kthebox) que auxiliou com markdown 
 
